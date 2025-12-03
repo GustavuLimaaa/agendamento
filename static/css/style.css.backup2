@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Agendamento</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>📅 Sistema de Agendamento</h1>
+            <p>Gerencie suas tarefas e compromissos de forma eficiente</p>
+        </header>
+
+        <!-- Navegação -->
+        <nav class="nav">
+            <button class="nav-btn active" data-view="dashboard">🏠 Início</button>
+            <button class="nav-btn" data-view="tasks">✅ Tarefas</button>
+            <div class="card-header">
+                <h2 class="card-title">Tarefas</h2>
+                <button class="btn btn-primary" onclick="openNewTaskModal()">+ Nova Tarefa</button>
+            </div>
+
+            <!-- Filtros -->
+            <div class="filters">
+                <div class="filter-group">
+                    <label class="form-label">Status</label>
+                    <select id="filter-status" class="form-select">
+                        <option value="">Todos</option>
+                        <option value="pendente">Pendente</option>
+                        <option value="em_andamento">Em Andamento</option>
+                        <option value="concluida">Concluída</option>
+                        <option value="adiada">Adiada</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="form-label">Prioridade</label>
+                    <select id="filter-prioridade" class="form-select">
+                        <option value="">Todas</option>
+                        <option value="urgente">Urgente</option>
+                        <option value="alta">Alta</option>
+                        <option value="media">Média</option>
+                        <option value="baixa">Baixa</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="form-label">Categoria</label>
+                    <input type="text" id="filter-categoria" class="form-input" placeholder="Filtrar por categoria">
+                </div>
+                <div class="filter-group">
+                    <label class="form-label">Palavra-chave</label>
+                    <input type="text" id="filter-palavra-chave" class="form-input"
+                        placeholder="Filtrar por palavra-chave">
+                </div>
+            </div>
+            <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                <button class="btn btn-primary" onclick="applyTaskFilters()">Aplicar Filtros</button>
+                <button class="btn btn-warning" onclick="clearTaskFilters()">Limpar Filtros</button>
+            </div>
+
+            <div id="tasks-list"></div>
+    </div>
+    </div>
+
+    <!-- Appointments View -->
+    <div id="appointments-view" class="view hidden">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Minha Agenda</h2>
+                <button class="btn btn-primary" onclick="openNewAppointmentModal()">+ Novo Agendamento</button>
+            </div>
+
+            <!-- Filtros -->
+            <div class="filters">
+                <div class="filter-group">
+                    <label class="form-label">Data Início</label>
+                    <input type="date" id="filter-data-inicio" class="form-input">
+                </div>
+                <div class="filter-group">
+                    <label class="form-label">Data Fim</label>
+                    <input type="date" id="filter-data-fim" class="form-input">
+                </div>
+                <div class="filter-group">
+                    <label class="form-label">Palavra-chave</label>
+                    <input type="text" id="filter-appointment-palavra-chave" class="form-input"
+                        placeholder="Filtrar por palavra-chave">
+                </div>
+            </div>
+            <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                <button class="btn btn-primary" onclick="applyAppointmentFilters()">Aplicar Filtros</button>
+                <button class="btn btn-warning" onclick="clearAppointmentFilters()">Limpar Filtros</button>
+            </div>
+
+            <div id="appointments-list"></div>
+        </div>
+    </div>
+
+    <!-- Kanban View -->
+    <div id="kanban-view" class="view hidden">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Quadro de Tarefas</h2>
+            </div>
+            <div id="kanban-board" class="kanban-board"></div>
+        </div>
+    </div>
+
+    <!-- Calendar View -->
+    <div id="calendar-view" class="view hidden">
+        <div id="calendar-container"></div>
+    </div>
+
+    <!-- History View -->
+    <div id="history-view" class="view hidden">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Tarefas Concluídas</h2>
+            </div>
+
+            <!-- Search bar for History -->
+            <div class="filters">
+                <div class="filter-group">
+                    <label class="form-label">Buscar</label>
+                    <input type="text" id="filter-history-search" class="form-input"
+                        placeholder="Buscar por título, categoria ou palavra-chave">
+                </div>
+            </div>
+            <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                <button class="btn btn-primary" onclick="applyHistorySearch()">Buscar</button>
+                <button class="btn btn-warning" onclick="clearHistorySearch()">Limpar</button>
+            </div>
+
+            <div id="history-list"></div>
+        </div>
+    </div>
+
+    <!-- Modal de Tarefa -->
+    <div id="task-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="task-modal-title">Nova Tarefa</h2>
+                <button class="modal-close" onclick="closeModal('task-modal')">✕</button>
+            </div>
+            <form id="task-form" onsubmit="saveTask(event)">
+                <input type="hidden" id="task-id">
+
+                <div class="form-group">
+                    <label class="form-label">Título *</label>
+                    <input type="text" id="task-titulo" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Descrição</label>
+                    <textarea id="task-descricao" class="form-textarea"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Categoria *</label>
+                    <input type="text" id="task-categoria" class="form-input" required
+                        placeholder="Ex: Trabalho, Pessoal, Estudos">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Palavra-chave</label>
+                    <input type="text" id="task-palavra-chave" class="form-input" placeholder="Ex: URGENTE, PROJETO-X">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Prioridade *</label>
+                    <select id="task-prioridade" class="form-select" required>
+                        <option value="baixa">Baixa</option>
+                        <option value="media" selected>Média</option>
+                        <option value="alta">Alta</option>
+                        <option value="urgente">Urgente</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Status *</label>
+                    <select id="task-status" class="form-select" required>
+                        <option value="pendente" selected>Pendente</option>
+                        <option value="em_andamento">Em Andamento</option>
+                        <option value="concluida">Concluída</option>
+                        <option value="adiada">Adiada</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Data Limite</label>
+                    <input type="date" id="task-data-limite" class="form-input">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Responsáveis</label>
+                    <input type="text" id="task-responsaveis" class="form-input" placeholder="Separados por vírgula">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Observações</label>
+                    <textarea id="task-observacoes" class="form-textarea"></textarea>
+                </div>
+
+                <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                    <button type="submit" class="btn btn-success">Salvar</button>
+                    <button type="button" class="btn btn-warning" onclick="closeModal('task-modal')">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Compromisso -->
+    <div id="appointment-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="appointment-modal-title">Novo Compromisso</h2>
+                <button class="modal-close" onclick="closeModal('appointment-modal')">✕</button>
+            </div>
+            <form id="appointment-form" onsubmit="saveAppointment(event)">
+                <input type="hidden" id="appointment-id">
+
+                <div class="form-group">
+                    <label class="form-label">Título *</label>
+                    <input type="text" id="appointment-titulo" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Participantes</label>
+                    <input type="text" id="appointment-participantes" class="form-input"
+                        placeholder="Separados por vírgula">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Assunto Principal</label>
+                    <input type="text" id="appointment-assunto" class="form-input">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Palavra-chave</label>
+                    <input type="text" id="appointment-palavra-chave" class="form-input"
+                        placeholder="Ex: REUNIÃO, SPRINT">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Local ou Link</label>
+                    <input type="text" id="appointment-local" class="form-input"
+                        placeholder="Endereço ou URL da reunião">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Data *</label>
+                    <input type="date" id="appointment-data" class="form-input" required>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label class="form-label">Horário Início *</label>
+                        <input type="time" id="appointment-horario-inicio" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Horário Fim *</label>
+                        <input type="time" id="appointment-horario-fim" class="form-input" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Objetivo</label>
+                    <textarea id="appointment-objetivo" class="form-textarea"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Lembretes</label>
+                    <input type="text" id="appointment-lembretes" class="form-input"
+                        placeholder="Ex: 1 hora antes, 1 dia antes">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Notas da Reunião</label>
+                    <textarea id="appointment-notas" class="form-textarea"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Próximos Passos</label>
+                    <textarea id="appointment-proximos-passos" class="form-textarea"></textarea>
+                    <button type="button" class="btn btn-primary mt-1"
+                        onclick="generateNextSteps(document.getElementById('appointment-id').value)">
+                        🤖 Gerar Automaticamente
+                    </button>
+                </div>
+
+                <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                    <button type="submit" class="btn btn-success">Salvar</button>
+                    <button type="button" class="btn btn-warning"
+                        onclick="closeModal('appointment-modal')">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Detalhes do Dia -->
+    <div id="day-details-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Detalhes do Dia</h2>
+                <button class="modal-close" onclick="closeModal('day-details-modal')">✕</button>
+            </div>
+            <div id="day-details-content"></div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/tasks.js"></script>
+    <script src="/static/js/appointments.js"></script>
+    <script src="/static/js/calendar.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1195 @@
+﻿/* ============================================
+   1. VARIÁVEIS CSS
+   ============================================ */
+:root {
+    /* Cores Primárias */
+    --primary-color: #6b7fd7;
+    --primary-rgb: 107, 127, 215;
+    --secondary-color: #8b9dc3;
+    --secondary-rgb: 139, 157, 195;
+
+    /* Cores de Fundo */
+    --bg-primary: #f5f7fa;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #e8ecf1;
+    --bg-card: #ffffff;
+    --bg-hover: #f5f5f5;
+
+    /* Gradientes */
+    --gradient-primary: linear-gradient(135deg, #6b7fd7 0%, #8b9dc3 100%);
+    --gradient-success: linear-gradient(135deg, #5fb89a 0%, #7ec8b0 100%);
+    --gradient-warning: linear-gradient(135deg, #e89b9b 0%, #d88a8a 100%);
+    --gradient-info: linear-gradient(135deg, #7eb3d8 0%, #9ac5e0 100%);
+
+    /* Cores de Texto */
+    --text-primary: #2c3e50;
+    --text-secondary: #546e7a;
+    --text-muted: #90a4ae;
+
+    /* Status */
+    --status-pendente: #ffd54f;
+    --status-em-andamento: #64b5f6;
+    --status-concluida: #81c784;
+    --status-adiada: #e57373;
+
+    /* Prioridades */
+    --priority-urgente: #ef5350;
+    --priority-alta: #ff9800;
+    --priority-media: #ffc107;
+    --priority-baixa: #66bb6a;
+
+    /* Outras Cores */
+    --danger-color: #dc3545;
+    --danger-rgb: 220, 53, 69;
+    --success-color: #10b981;
+    --success-rgb: 16, 185, 129;
+    --warning-color: #f59e0b;
+    --info-color: #3b82f6;
+    --border-color: #dee2e6;
+
+    /* Espaçamentos */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+
+    /* Bordas */
+    --border-radius: 12px;
+    --border-radius-sm: 8px;
+    --border-radius-md: 10px;
+    --border-radius-lg: 16px;
+
+    /* Sombras */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+    /* Transições */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+
+    /* Z-Index Hierarchy */
+    --z-dropdown: 1000;
+    --z-sticky: 1020;
+    --z-modal-backdrop: 1040;
+    --z-modal: 1050;
+    --z-tooltip: 1060;
+    --z-toast: 1070;
+}
+
+/* ============================================
+   2. RESET E ESTILOS GLOBAIS
+   ============================================ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   3. LAYOUT PRINCIPAL
+   ============================================ */
+.container {
+    margin: 0 auto;
+    max-width: 1400px;
+    padding: var(--spacing-lg);
+    width: 100%;
+}
+
+.header {
+    background: var(--bg-secondary);
+    border: 1px solid #e0e6ed;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-xl);
+    text-align: center;
+}
+
+.header h1 {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: var(--spacing-xs);
+}
+
+.header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* ============================================
+   4. NAVEGAÇÃO
+   ============================================ */
+.nav {
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    justify-content: center;
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-md);
+}
+
+.nav-btn {
+    background: transparent;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    transition: all var(--transition-fast);
+}
+
+.nav-btn:hover {
+    background: var(--bg-tertiary);
+    color: var(--primary-color);
+}
+
+.nav-btn.active {
+    background: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(107, 127, 215, 0.3);
+    color: white;
+}
+
+/* ============================================
+   5. VIEWS E CARDS
+   ============================================ */
+.view {
+    display: none;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.view.active {
+    animation: fadeIn 0.4s ease forwards;
+    display: block !important;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid #e0e6ed;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-lg);
+}
+
+.card-header {
+    align-items: center;
+    border-bottom: 1px solid var(--bg-tertiary);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+}
+
+.card-title {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+/* ============================================
+   6. DASHBOARD
+   ============================================ */
+.stats-grid {
+    display: grid;
+    gap: var(--spacing-md);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    margin-bottom: var(--spacing-xl);
+}
+
+.stat-card {
+    background: var(--bg-secondary);
+    border: 1px solid #e0e6ed;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    padding: var(--spacing-lg);
+    text-align: center;
+    transition: transform var(--transition-fast);
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+}
+
+.stat-card.highlight-card {
+    background: var(--gradient-primary);
+    border: none;
+    box-shadow: 0 8px 24px rgba(107, 127, 215, 0.3);
+    color: white;
+    transform: scale(1.05);
+}
+
+.stat-card.highlight-card:hover {
+    transform: scale(1.08) translateY(-4px);
+    box-shadow: 0 12px 32px rgba(107, 127, 215, 0.4);
+}
+
+.stat-card.highlight-card h3,
+.stat-card.highlight-card .stat-number {
+    color: white;
+}
+
+.stat-card.highlight-card .stat-number {
+    font-size: 3rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.stat-value {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-top: var(--spacing-xs);
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* ============================================
+   7. FILTROS E FORMULÁRIOS
+   ============================================ */
+.filters {
+    background: var(--bg-tertiary);
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-md);
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.form-label {
+    color: var(--text-secondary);
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.75rem;
+    transition: border-color var(--transition-fast);
+    width: 100%;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.1);
+    outline: none;
+}
+
+.form-textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* ============================================
+   8. BOTÕES
+   ============================================ */
+.btn {
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    transition: all var(--transition-fast);
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #5a6ac0;
+    transform: translateY(-1px);
+}
+
+.btn-success {
+    background: var(--success-color);
+    color: white;
+}
+
+.btn-success:hover {
+    background: #0d9668;
+}
+
+.btn-warning {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+.btn-warning:hover {
+    background: #dbe2e8;
+}
+
+.btn-danger {
+    background: var(--danger-color);
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+}
+
+/* ============================================
+   9. LISTAS (TAREFAS E COMPROMISSOS)
+   ============================================ */
+.task-list,
+.appointment-list {
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.task-item,
+.appointment-item {
+    background: white;
+    border: 1px solid #e0e6ed;
+    border-left: 4px solid var(--primary-color);
+    border-radius: var(--border-radius-sm);
+    padding: var(--spacing-md);
+    position: relative;
+    transition: all var(--transition-fast);
+    overflow: visible;
+}
+
+.task-item:hover,
+.appointment-item:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateX(4px);
+}
+
+/* Prioridades */
+.task-item.priority-urgente {
+    border-left-color: var(--priority-urgente);
+}
+
+.task-item.priority-alta {
+    border-left-color: var(--priority-alta);
+}
+
+.task-item.priority-media {
+    border-left-color: var(--priority-media);
+}
+
+.task-item.priority-baixa {
+    border-left-color: var(--priority-baixa);
+}
+
+.task-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-sm);
+}
+
+.task-title {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.task-badges {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.badge {
+    border-radius: var(--border-radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    text-transform: uppercase;
+}
+
+.badge-status.pendente {
+    background: var(--status-pendente);
+    color: #2c3e50;
+}
+
+.badge-status.em_andamento {
+    background: var(--status-em-andamento);
+    color: white;
+}
+
+.badge-status.concluida {
+    background: var(--status-concluida);
+    color: white;
+}
+
+.badge-status.adiada {
+    background: var(--status-adiada);
+    color: white;
+}
+
+.badge-priority {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+/* ============================================
+   10. ACTION MENU (Dropdown)
+   ============================================ */
+.action-menu-container {
+    position: relative;
+    z-index: 10;
+}
+
+.action-menu-btn {
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    height: 32px;
+    width: 32px;
+    transition: all var(--transition-fast);
+}
+
+.action-menu-btn:hover,
+.action-menu-btn.active {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--text-primary);
+}
+
+.action-menu {
+    animation: menuFadeIn 0.2s ease;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 160px;
+    padding: 0.5rem;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: var(--z-dropdown);
+}
+
+.action-menu.active {
+    display: flex;
+}
+
+@keyframes menuFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.action-menu button {
+    align-items: center;
+    background: transparent;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex;
+    font-size: 0.9rem;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    transition: all var(--transition-fast);
+    width: 100%;
+}
+
+.action-menu button:hover {
+    background: var(--bg-tertiary);
+    transform: translateX(2px);
+}
+
+.action-menu .delete-btn {
+    color: var(--danger-color);
+}
+
+.action-menu .delete-btn:hover {
+    background: rgba(var(--danger-rgb), 0.1);
+}
+
+.appointment-details {
+    padding: 1rem 0;
+}
+
+.detail-row {
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--bg-tertiary);
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-row strong {
+    color: var(--text-primary);
+    display: inline-block;
+    margin-right: 0.5rem;
+    min-width: 120px;
+}
+
+.btn-danger {
+    background: var(--danger-color);
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   11. MODAIS
+   ============================================ */
+.modal {
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    bottom: 0;
+    display: none;
+    justify-content: center;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: opacity 0.3s ease;
+    z-index: var(--z-modal-backdrop);
+}
+
+.modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background: white;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    max-height: 90vh;
+    max-width: 600px;
+    overflow-y: auto;
+    padding: var(--spacing-xl);
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    width: 90%;
+    z-index: var(--z-modal);
+}
+
+/* Modal maior para detalhes do dia no calendário */
+#day-details-modal .modal-content {
+    max-width: 900px;
+    width: 95%;
+    max-height: 90vh;
+}
+
+#appointment-details-modal .modal-content {
+    max-width: 700px;
+    width: 95%;
+}
+
+.modal.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-header {
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+}
+
+.modal-close {
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 1.5rem;
+    height: 32px;
+    width: 32px;
+    transition: all var(--transition-fast);
+}
+
+.modal-close:hover {
+    background: var(--bg-tertiary);
+    color: var(--danger-color);
+}
+
+/* ============================================
+   12. KANBAN
+   ============================================ */
+.kanban-board {
+    display: grid;
+    gap: var(--spacing-md);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.kanban-column {
+    background: var(--bg-tertiary);
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+    padding: var(--spacing-md);
+}
+
+.kanban-header {
+    align-items: center;
+    display: flex;
+    font-size: 1.1rem;
+    font-weight: 700;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-md);
+}
+
+.kanban-count {
+    background: var(--bg-secondary);
+    border-radius: 50%;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    width: 24px;
+}
+
+.kanban-column-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    min-height: 200px;
+    padding: var(--spacing-sm);
+}
+
+.empty-column {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    padding: var(--spacing-md);
+    text-align: center;
+}
+
+.kanban-task {
+    background: var(--bg-secondary);
+    border: 1px solid #e0e6ed;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    padding: var(--spacing-md);
+    transition: all var(--transition-fast);
+}
+
+.kanban-task:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.kanban-task-header {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-xs);
+}
+
+.kanban-task-title {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    flex: 1;
+}
+
+.kanban-task-category {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.kanban-task-desc {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.kanban-task-footer {
+    align-items: center;
+    display: flex;
+    font-size: 0.8rem;
+    gap: var(--spacing-sm);
+    justify-content: space-between;
+}
+
+.kanban-task-priority {
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.kanban-task-date {
+    color: var(--text-muted);
+}
+
+/* ============================================
+   13. CALENDÁRIO
+   ============================================ */
+.calendar-container {
+    background: var(--bg-card);
+    border: 1px solid #e0e6ed;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-lg);
+}
+
+.calendar-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-lg);
+}
+
+.calendar-title {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.calendar-nav {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.calendar-nav-btn {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: var(--spacing-sm) var(--spacing-md);
+    transition: all var(--transition-fast);
+}
+
+.calendar-nav-btn:hover {
+    background: var(--bg-hover);
+    border-color: var(--primary-color);
+}
+
+.calendar-weekdays {
+    display: grid;
+    gap: var(--spacing-sm);
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: var(--spacing-sm);
+}
+
+.calendar-weekday {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: var(--spacing-sm);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.calendar-grid {
+    display: grid;
+    gap: var(--spacing-sm);
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    background: var(--bg-secondary);
+    border: 1px solid #e0e6ed;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-sm);
+    position: relative;
+    transition: all var(--transition-fast);
+}
+
+.calendar-day:hover {
+    background: var(--bg-hover);
+    border-color: var(--primary-color);
+    transform: scale(1.02);
+    z-index: 10;
+}
+
+.calendar-day.other-month {
+    opacity: 0.4;
+}
+
+.calendar-day.today {
+    border: 2px solid var(--primary-color);
+    background: rgba(107, 127, 215, 0.1);
+}
+
+.calendar-day.has-events {
+    border: 2px solid var(--primary-color);
+    background: rgba(107, 127, 215, 0.05);
+}
+
+.calendar-day.empty {
+    background: transparent;
+    border: none;
+    cursor: default;
+}
+
+.calendar-day-number {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.calendar-event {
+    font-size: 0.7rem;
+    padding: 2px 4px;
+    border-radius: 3px;
+    margin-bottom: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.calendar-appointment {
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--success-color);
+}
+
+.calendar-task {
+    background: rgba(var(--primary-rgb), 0.15);
+    color: var(--primary-color);
+}
+
+.calendar-more-events {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 2px;
+}
+
+.day-details-content {
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: 1rem 0;
+}
+
+.day-events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.day-event-item {
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    background: var(--bg-secondary);
+}
+
+.day-number {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.day-events {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    overflow: hidden;
+}
+
+.calendar-event-dot {
+    border-radius: 2px;
+    font-size: 0.7rem;
+    overflow: hidden;
+    padding: 2px 4px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.calendar-event-dot.task {
+    background: rgba(var(--primary-rgb), 0.15);
+    color: var(--primary-color);
+}
+
+.calendar-event-dot.appointment {
+    background: rgba(16, 185, 129, 0.15);
+    /* Success color */
+    color: var(--success-color);
+}
+
+/* ============================================
+   14. HELP VIEW
+   ============================================ */
+.help-container {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: var(--spacing-md);
+}
+
+.help-section {
+    background: white;
+    border: 1px solid #e0e6ed;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--spacing-md);
+    overflow: hidden;
+}
+
+.help-accordion {
+    align-items: center;
+    background: #f8f9fa;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex;
+    font-size: 1.1rem;
+    font-weight: 600;
+    justify-content: space-between;
+    padding: var(--spacing-md);
+    text-align: left;
+    transition: background 0.2s ease;
+    width: 100%;
+}
+
+.help-accordion:hover {
+    background: #e9ecef;
+}
+
+.help-accordion::after {
+    content: '▼';
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.help-accordion.active::after {
+    transform: rotate(180deg);
+}
+
+.help-panel {
+    animation: slideDown 0.3s ease;
+    background: white;
+    border-top: 1px solid #e0e6ed;
+    display: none;
+    padding: var(--spacing-lg);
+    overflow: hidden;
+}
+
+.help-panel[style*="display: block"] {
+    display: block !important;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.help-step {
+    align-items: flex-start;
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.step-number {
+    align-items: center;
+    background: var(--primary-color);
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    flex-shrink: 0;
+    font-weight: bold;
+    height: 30px;
+    justify-content: center;
+    width: 30px;
+}
+
+/* ============================================
+   15. UTILITÁRIOS E RESPONSIVIDADE
+   ============================================ */
+.hidden:not(.active) {
+    display: none !important;
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: var(--primary-color);
+    border-radius: 50%;
+    height: 40px;
+    margin: 2rem auto;
+    width: 40px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.notification {
+    animation: slideIn 0.3s ease;
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-lg);
+    color: white;
+    font-weight: 500;
+    padding: 12px 24px;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: var(--z-toast);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: var(--spacing-md);
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .nav-btn {
+        text-align: center;
+        width: 100%;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        margin: 0;
+        max-height: 100vh;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .filters {
+        flex-direction: column;
+    }
+
+    .filter-group {
+        min-width: 100%;
+    }
+}
+
+/* Acessibilidade: Redução de Movimento */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

@@ -1,0 +1,208 @@
+2025-11-29 10:13:55,137 - __main__ - INFO - Iniciando população do banco de dados...
+2025-11-29 10:13:55,138 - database - INFO - Inicializando banco de dados...
+2025-11-29 10:13:55,176 - database - INFO - Banco de dados inicializado com sucesso
+2025-11-29 10:13:55,177 - __main__ - INFO - Criando tarefas de exemplo...
+2025-11-29 10:13:55,185 - models - INFO - Tarefa criada com ID: 1
+2025-11-29 10:13:55,185 - __main__ - INFO - Tarefa criada: Implementar autenticação de usuários
+2025-11-29 10:13:55,192 - models - INFO - Tarefa criada com ID: 2
+2025-11-29 10:13:55,193 - __main__ - INFO - Tarefa criada: Revisar documentação do projeto
+2025-11-29 10:13:55,200 - models - INFO - Tarefa criada com ID: 3
+2025-11-29 10:13:55,201 - __main__ - INFO - Tarefa criada: Corrigir bug no formulário de cadastro
+2025-11-29 10:13:55,209 - models - INFO - Tarefa criada com ID: 4
+2025-11-29 10:13:55,209 - __main__ - INFO - Tarefa criada: Otimizar queries do banco de dados
+2025-11-29 10:13:55,220 - models - INFO - Tarefa criada com ID: 5
+2025-11-29 10:13:55,221 - __main__ - INFO - Tarefa criada: Criar testes unitários para módulo de pagamentos
+2025-11-29 10:13:55,228 - models - INFO - Tarefa criada com ID: 6
+2025-11-29 10:13:55,229 - __main__ - INFO - Tarefa criada: Implementar dashboard de analytics
+2025-11-29 10:13:55,235 - models - INFO - Tarefa criada com ID: 7
+2025-11-29 10:13:55,236 - __main__ - INFO - Tarefa criada: Migração para Python 3.12
+2025-11-29 10:13:55,236 - __main__ - INFO - Criando compromissos de exemplo...
+2025-11-29 10:13:55,242 - models - INFO - Compromisso criado com ID: 1
+2025-11-29 10:13:55,243 - __main__ - INFO - Compromisso criado: Reunião de Planning Sprint 15
+2025-11-29 10:13:55,250 - models - INFO - Compromisso criado com ID: 2
+2025-11-29 10:13:55,251 - __main__ - INFO - Compromisso criado: Review com Cliente - Projeto X
+2025-11-29 10:13:55,257 - models - INFO - Compromisso criado com ID: 3
+2025-11-29 10:13:55,258 - __main__ - INFO - Compromisso criado: Daily Standup
+2025-11-29 10:13:55,264 - models - INFO - Compromisso criado com ID: 4
+2025-11-29 10:13:55,265 - __main__ - INFO - Compromisso criado: Workshop de Arquitetura de Software
+2025-11-29 10:13:55,271 - models - INFO - Compromisso criado com ID: 5
+2025-11-29 10:13:55,271 - __main__ - INFO - Compromisso criado: Entrevista - Desenvolvedor Backend
+2025-11-29 10:13:55,271 - __main__ - INFO - Banco de dados populado com sucesso!
+2025-11-29 10:14:16,599 - __main__ - INFO - Iniciando aplicação...
+2025-11-29 10:14:16,602 - database - INFO - Inicializando banco de dados...
+2025-11-29 10:14:16,606 - database - INFO - Banco de dados inicializado com sucesso
+2025-11-29 10:14:16,608 - __main__ - INFO - Servidor rodando em http://0.0.0.0:5000
+2025-11-29 10:14:17,429 - __main__ - INFO - Iniciando aplicação...
+2025-11-29 10:14:17,430 - database - INFO - Inicializando banco de dados...
+2025-11-29 10:14:17,437 - database - INFO - Banco de dados inicializado com sucesso
+2025-11-29 10:14:17,438 - __main__ - INFO - Servidor rodando em http://0.0.0.0:5000
+2025-11-29 10:15:42,734 - __main__ - INFO - Iniciando aplicação...
+2025-11-29 10:15:42,735 - database - INFO - Inicializando banco de dados...
+2025-11-29 10:15:42,737 - database - INFO - Banco de dados inicializado com sucesso
+2025-11-29 10:15:42,737 - __main__ - INFO - Servidor rodando em http://0.0.0.0:5000
+2025-11-29 10:15:43,278 - __main__ - INFO - Iniciando aplicação...
+2025-11-29 10:15:43,279 - database - INFO - Inicializando banco de dados...
+2025-11-29 10:15:43,282 - database - INFO - Banco de dados inicializado com sucesso
+2025-11-29 10:15:43,283 - __main__ - INFO - Servidor rodando em http://0.0.0.0:5000
+2025-11-29 10:24:18,489 - __main__ - INFO - Iniciando aplicação...
+2025-11-29 10:24:18,489 - database - INFO - Inicializando banco de dados...
+2025-11-29 10:24:18,492 - database - INFO - Banco de dados inicializado com sucesso
+2025-11-29 10:24:18,492 - __main__ - INFO - Servidor rodando em http://0.0.0.0:5000
+2025-11-29 10:24:19,179 - __main__ - INFO - Iniciando aplicação...
+2025-11-29 10:24:19,179 - database - INFO - Inicializando banco de dados...
+2025-11-29 10:24:19,182 - database - INFO - Banco de dados inicializado com sucesso
+2025-11-29 10:24:19,182 - __main__ - INFO - Servidor rodando em http://0.0.0.0:5000
+2025-11-29 10:30:34,232 - __main__ - INFO - Iniciando aplicação...
+2025-11-29 10:30:34,232 - database - INFO - Inicializando banco de dados...
+2025-11-29 10:30:34,235 - database - INFO - Banco de dados inicializado com sucesso
+2025-11-29 10:30:34,235 - __main__ - INFO - Servidor rodando em http://0.0.0.0:5000
+2025-11-29 10:30:34,844 - __main__ - INFO - Iniciando aplicação...
+2025-11-29 10:30:34,844 - database - INFO - Inicializando banco de dados...
+2025-11-29 10:30:34,846 - database - INFO - Banco de dados inicializado com sucesso
+2025-11-29 10:30:34,847 - __main__ - INFO - Servidor rodando em http://0.0.0.0:5000
+2025-11-29 10:39:26,019 - __main__ - INFO - Iniciando aplicação...
+2025-11-29 10:39:26,019 - database - INFO - Inicializando banco de dados...
+2025-11-29 10:39:26,022 - database - INFO - Banco de dados inicializado com sucesso
+2025-11-29 10:39:26,022 - __main__ - INFO - Servidor rodando em http://0.0.0.0:5000
+2025-11-29 10:39:26,640 - __main__ - INFO - Iniciando aplicação...
+2025-11-29 10:39:26,640 - database - INFO - Inicializando banco de dados...
+2025-11-29 10:39:26,643 - database - INFO - Banco de dados inicializado com sucesso
+2025-11-29 10:39:26,643 - __main__ - INFO - Servidor rodando em http://0.0.0.0:5000
+2025-11-29 11:29:16,015 - models - INFO - Tarefa criada com ID: 8
+2025-11-29 11:30:01,766 - models - INFO - Tarefa criada com ID: 9
+2025-11-29 11:31:00,306 - models - INFO - Tarefa criada com ID: 10
+2025-11-29 11:31:22,680 - models - INFO - Tarefa criada com ID: 11
+2025-11-29 11:31:55,508 - models - INFO - Tarefa 3 atualizada
+2025-11-29 11:32:03,884 - models - INFO - Tarefa 1 atualizada
+2025-11-29 11:32:09,832 - models - INFO - Tarefa 5 atualizada
+2025-11-29 11:32:19,294 - models - INFO - Tarefa 8 atualizada
+2025-11-29 11:32:23,944 - models - INFO - Tarefa 10 atualizada
+2025-11-29 11:32:35,514 - models - INFO - Tarefa 9 atualizada
+2025-11-29 11:32:40,035 - models - INFO - Tarefa 11 atualizada
+2025-11-29 11:32:45,111 - models - INFO - Tarefa 2 atualizada
+2025-11-29 11:32:49,146 - models - INFO - Tarefa 6 atualizada
+2025-11-29 11:34:20,799 - models - INFO - Tarefa criada com ID: 12
+2025-11-29 11:34:35,886 - models - INFO - Tarefa 12 atualizada
+2025-11-29 11:51:16,497 - __main__ - INFO - Iniciando aplicação...
+2025-11-29 11:51:16,497 - database - INFO - Inicializando banco de dados...
+2025-11-29 11:51:16,499 - database - INFO - Banco de dados inicializado com sucesso
+2025-11-29 11:51:16,501 - __main__ - INFO - Servidor rodando em http://0.0.0.0:5000
+2025-11-29 11:51:17,328 - __main__ - INFO - Iniciando aplicação...
+2025-11-29 11:51:17,328 - database - INFO - Inicializando banco de dados...
+2025-11-29 11:51:17,331 - database - INFO - Banco de dados inicializado com sucesso
+2025-11-29 11:51:17,332 - __main__ - INFO - Servidor rodando em http://0.0.0.0:5000
+2025-11-29 12:04:34,492 - models - INFO - Compromisso 3 deletado
+2025-11-29 12:24:46,945 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-11-29 12:30:11,613 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-11-29 13:43:30,868 - models - INFO - Compromisso 2 deletado
+2025-11-29 13:57:21,475 - __main__ - INFO - Iniciando aplicação...
+2025-11-29 13:57:21,476 - database - INFO - Inicializando banco de dados...
+2025-11-29 13:57:21,478 - database - INFO - Banco de dados inicializado com sucesso
+2025-11-29 13:57:21,478 - __main__ - INFO - Servidor rodando em http://0.0.0.0:5000
+2025-11-29 13:57:21,908 - __main__ - INFO - Iniciando aplicação...
+2025-11-29 13:57:21,909 - database - INFO - Inicializando banco de dados...
+2025-11-29 13:57:21,911 - database - INFO - Banco de dados inicializado com sucesso
+2025-11-29 13:57:21,911 - __main__ - INFO - Servidor rodando em http://0.0.0.0:5000
+2025-11-29 13:58:08,511 - models - INFO - Compromisso 1 deletado
+2025-11-29 19:18:53,672 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-11-29 19:36:02,281 - __main__ - INFO - Iniciando aplicação...
+2025-11-29 19:36:02,281 - database - INFO - Inicializando banco de dados...
+2025-11-29 19:36:02,283 - database - INFO - Banco de dados inicializado com sucesso
+2025-11-29 19:36:02,284 - __main__ - INFO - Servidor rodando em http://0.0.0.0:5000
+2025-11-29 19:36:02,850 - __main__ - INFO - Iniciando aplicação...
+2025-11-29 19:36:02,851 - database - INFO - Inicializando banco de dados...
+2025-11-29 19:36:02,853 - database - INFO - Banco de dados inicializado com sucesso
+2025-11-29 19:36:02,853 - __main__ - INFO - Servidor rodando em http://0.0.0.0:5000
+2025-11-29 19:36:35,955 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-11-29 20:24:54,229 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-11-29 20:31:29,879 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 05:32:50,752 - __main__ - INFO - Iniciando aplicação...
+2025-12-02 05:32:50,752 - database - INFO - Inicializando banco de dados...
+2025-12-02 05:32:50,765 - database - INFO - Banco de dados inicializado com sucesso
+2025-12-02 05:32:50,765 - __main__ - INFO - Servidor rodando em http://0.0.0.0:5000
+2025-12-02 05:32:51,440 - __main__ - INFO - Iniciando aplicação...
+2025-12-02 05:32:51,440 - database - INFO - Inicializando banco de dados...
+2025-12-02 05:32:51,447 - database - INFO - Banco de dados inicializado com sucesso
+2025-12-02 05:32:51,447 - __main__ - INFO - Servidor rodando em http://0.0.0.0:5000
+2025-12-02 05:33:08,352 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 05:35:50,084 - models - INFO - Compromisso 5 deletado
+2025-12-02 06:24:17,047 - models - INFO - Compromisso criado com ID: 6
+2025-12-02 11:55:50,199 - __main__ - INFO - Iniciando aplicação...
+2025-12-02 11:55:50,199 - database - INFO - Inicializando banco de dados...
+2025-12-02 11:55:50,204 - database - INFO - Banco de dados inicializado com sucesso
+2025-12-02 11:55:50,204 - __main__ - INFO - Servidor rodando em http://0.0.0.0:5000
+2025-12-02 11:55:50,810 - __main__ - INFO - Iniciando aplicação...
+2025-12-02 11:55:50,811 - database - INFO - Inicializando banco de dados...
+2025-12-02 11:55:50,814 - database - INFO - Banco de dados inicializado com sucesso
+2025-12-02 11:55:50,814 - __main__ - INFO - Servidor rodando em http://0.0.0.0:5000
+2025-12-02 11:56:02,214 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 12:25:04,084 - __main__ - INFO - Iniciando aplicação...
+2025-12-02 12:25:04,086 - database - INFO - Inicializando banco de dados...
+2025-12-02 12:25:04,087 - database - INFO - Banco de dados inicializado com sucesso
+2025-12-02 12:25:04,088 - __main__ - INFO - Servidor rodando em http://0.0.0.0:5000
+2025-12-02 12:25:04,490 - __main__ - INFO - Iniciando aplicação...
+2025-12-02 12:25:04,491 - database - INFO - Inicializando banco de dados...
+2025-12-02 12:25:04,493 - database - INFO - Banco de dados inicializado com sucesso
+2025-12-02 12:25:04,493 - __main__ - INFO - Servidor rodando em http://0.0.0.0:5000
+2025-12-02 12:28:53,526 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 12:29:12,882 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 12:29:35,677 - __main__ - INFO - Iniciando aplicação...
+2025-12-02 12:29:35,677 - database - INFO - Inicializando banco de dados...
+2025-12-02 12:29:35,679 - database - INFO - Banco de dados inicializado com sucesso
+2025-12-02 12:29:35,679 - __main__ - INFO - Servidor rodando em http://0.0.0.0:5000
+2025-12-02 12:29:36,364 - __main__ - INFO - Iniciando aplicação...
+2025-12-02 12:29:36,364 - database - INFO - Inicializando banco de dados...
+2025-12-02 12:29:36,368 - database - INFO - Banco de dados inicializado com sucesso
+2025-12-02 12:29:36,369 - __main__ - INFO - Servidor rodando em http://0.0.0.0:5000
+2025-12-02 12:30:22,273 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 12:55:59,966 - __main__ - INFO - Iniciando aplicação...
+2025-12-02 12:55:59,966 - database - INFO - Inicializando banco de dados...
+2025-12-02 12:55:59,969 - database - INFO - Banco de dados inicializado com sucesso
+2025-12-02 12:55:59,969 - __main__ - INFO - Servidor rodando em http://0.0.0.0:5000
+2025-12-02 12:56:00,359 - __main__ - INFO - Iniciando aplicação...
+2025-12-02 12:56:00,359 - database - INFO - Inicializando banco de dados...
+2025-12-02 12:56:00,362 - database - INFO - Banco de dados inicializado com sucesso
+2025-12-02 12:56:00,362 - __main__ - INFO - Servidor rodando em http://0.0.0.0:5000
+2025-12-02 13:00:34,273 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 13:28:38,586 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 13:28:38,590 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 13:28:38,779 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 13:29:20,294 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 13:42:48,805 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 13:42:48,810 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 13:42:48,979 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 13:43:05,905 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 14:10:12,730 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 14:10:12,733 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 14:10:12,929 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 14:10:25,154 - models - INFO - Compromisso 4 deletado
+2025-12-02 14:10:40,521 - models - INFO - Compromisso 6 atualizado
+2025-12-02 14:10:54,846 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 14:11:21,846 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 14:11:22,110 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 14:11:22,151 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 14:11:22,151 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 14:12:06,082 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 14:14:03,672 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 14:14:03,919 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 14:14:03,976 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 14:14:03,977 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 14:25:07,726 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 14:31:58,687 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 14:48:33,122 - __main__ - INFO - Iniciando aplicação...
+2025-12-02 14:48:33,123 - database - INFO - Inicializando banco de dados...
+2025-12-02 14:48:33,126 - database - INFO - Banco de dados inicializado com sucesso
+2025-12-02 14:48:33,126 - __main__ - INFO - Servidor rodando em http://0.0.0.0:5000
+2025-12-02 14:49:00,208 - models - INFO - Compromisso 6 deletado
+2025-12-02 14:50:36,343 - models - INFO - Compromisso criado com ID: 7
+2025-12-02 15:03:06,933 - models - INFO - Tarefa criada com ID: 13
+2025-12-02 15:11:06,001 - models - INFO - Compromisso 7 atualizado
+2025-12-02 15:11:13,139 - __main__ - WARNING - Página não encontrada: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-12-02 15:16:59,085 - __main__ - INFO - Iniciando aplicação...
+2025-12-02 15:16:59,085 - database - INFO - Inicializando banco de dados...
+2025-12-02 15:16:59,088 - database - INFO - Banco de dados inicializado com sucesso
+2025-12-02 15:16:59,088 - __main__ - INFO - Servidor rodando em http://0.0.0.0:5000
+2025-12-02 15:17:30,838 - __main__ - INFO - Iniciando aplicação...
+2025-12-02 15:17:30,839 - database - INFO - Inicializando banco de dados...
+2025-12-02 15:17:30,841 - database - INFO - Banco de dados inicializado com sucesso
+2025-12-02 15:17:30,842 - __main__ - INFO - Servidor rodando em http://0.0.0.0:5000
