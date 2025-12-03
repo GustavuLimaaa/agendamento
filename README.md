@@ -216,4 +216,4 @@ Para dúvidas ou problemas, consulte os logs em `logs/app.log` ou abra uma issue
 
 ---
 
-Desenvolvido com ❤️ usando Python e Flask
+Desenvolvido com usando Python e Flask (usando AI, isso mesmo, vozes da minha mente  + AI)
